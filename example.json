@@ -12,7 +12,6 @@
       "run_on_fail": true,
       "config": {
         "type": "string",
-        "match_re": "/.+/",
         "match_list": "develop,master,release",
         "success": "Match List Success",
         "failure": "Match List Failure"
