@@ -1,0 +1,73 @@
+{
+  "rule": "Validation Test",
+  "match": "validate*",
+  "help": "validate <some input>",
+  "active": true,
+  "format": true,
+  "debug": false,
+  "actions": [
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "string",
+        "match_re": "/.+/",
+        "match_list": "develop,master,release",
+        "success": "Match List Success",
+        "failure": "Match List Failure"
+      }
+    },
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "string",
+        "match_re": "/f(e+)l/",
+        "success": "Match RegEx Success",
+        "failure": "Match RegEx Failure"
+      }
+    },
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "int",
+        "success": "Match Int Success",
+        "failure": "Match Int Failure"
+      }
+    },
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "int64",
+        "success": "Match Int64 Success",
+        "failure": "Match Int64 Failure"
+      }
+    },
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "float",
+        "success": "Match Float Success",
+        "failure": "Match Float Failure"
+      }
+    },
+    {
+      "type": "hex-validate",
+      "command": "${hex.input.1}",
+      "run_on_fail": true,
+      "config": {
+        "type": "bool",
+        "success": "Match Bool Success",
+        "failure": "Match Bool Failure"
+      }
+    }
+  ]
+}
